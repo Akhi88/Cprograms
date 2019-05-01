@@ -3,18 +3,18 @@
 #include<stdlib.h>
 int main()
 {
-    int arr[10];
+    int arr[10]; 			//array initialisation
     int n1,i;
     printf("enter size of original array");
     scanf("%d",&n1);
     for(i=0;i<n1;i++)
     {
-    scanf("%d",&arr[i]);
+    scanf("%d",&arr[i]);  		 //array inputs
     }
-    mergesort(arr,n1);
+    mergesort(arr,n1);   		//dividing array into parts
 for(i=0;i<n1;i++)
     {
-    printf("%d",arr[i]);
+    printf("%d",arr[i]);  		//array after sorting
     }
 
     return 0;
@@ -27,8 +27,8 @@ void mergesort(int *arr,int n)
     {
     return;    
     }
-    L = (int*)malloc(mid*sizeof(int)); 
-	R = (int*)malloc((n -mid)*sizeof(int)); 
+    L = (int*)malloc(mid*sizeof(int));             	//left sub array     
+	R = (int*)malloc((n -mid)*sizeof(int)); 	//rightsubarray
     for(i=0;i<mid;i++)
     {
         L[i]=arr[i];
@@ -38,8 +38,8 @@ void mergesort(int *arr,int n)
         R[j-mid]=arr[j];
     }
     mergesort(L,mid);
-    mergesort(R,n-mid);
-    merge(arr,L,mid,R,n-mid);
+    mergesort(R,n-mid);					
+    merge(arr,L,mid,R,n-mid);				//merge left and right subarrays
      free(L);
         free(R);    
 }
@@ -52,7 +52,7 @@ void merge(int *arr,int *L,int leftsize,int *R,int rightsize)
     {
         if(L[i]<R[j])
         {
-            arr[k]=L[i];
+            arr[k]=L[i];					
             i++;
         }
         else
