@@ -36,7 +36,7 @@ void mergesort(int *arr,int n)
     for(j=mid;j<n;j++)
     {
         R[j-mid]=arr[j];
-    }
+    } //MergeSort
     mergesort(L,mid);
     mergesort(R,n-mid);					
     merge(arr,L,mid,R,n-mid);				//merge left and right subarrays
